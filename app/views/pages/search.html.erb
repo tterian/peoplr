@@ -10,7 +10,7 @@
 			<a class="navbar-brand" href="/">Peoplr</a>
 	    </div>
 
-	    <div id="navbar" class="collapse navbar-collapse">
+	    <div id="navbar" class="collapse navbar-collapse pull-right">"
 			<ul class="nav navbar-nav">
 	          	<li><%= link_to "About", "/about" %></li>
 	       		<li><%= link_to "Spread a word", "/spread" %></li>
@@ -19,8 +19,19 @@
     </div>
 </nav>
 
+
+
 <div class="starter-template center-block">
-	<h2>Results for <%= @query %></h2>
-    <p2>No results found!</p>
+	<h1>Results for <%= @query %> </h1>
+	<%= Search.update %>
+	<table class="table table-hover">
+	  <tr>
+	    <th>Tweetid</th>
+	    <th>Body</th>
+	    <th>Tweeted on</th>
+	    <th>Author</th>
+	    <th></th>
+	  </tr>
+	</table>
 </div>
 
