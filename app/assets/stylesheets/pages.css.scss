@@ -5,6 +5,7 @@
 .welcome-tab {
 	position: relative;
 	text-align: center;
+	horizontal-align: middle;
 	top: 150px;
 	width: 100%;
 	height: 100%;
@@ -15,6 +16,8 @@
 	color: #000000;
 	font-family: 'Dosis', sans-serif;
 	font-size: 50px;
+	text-align: center;
+	horizontal-align: middle;
 }
 
 .welcome-tab p1 {
@@ -26,7 +29,8 @@
 .search-tab {
 	position: relative;
 	top: 200px;
-    left: 25%;
+	text-align: center;
+	horizontal-align: middle;
 	font-family: 'Dosis', sans-serif;
 }
 
@@ -36,19 +40,33 @@
 
 .search-results {
 	position: relative;
-	left: 8px;
-	top: 80px;	
+	left: 98px;
+	top: 68px;	
 }
 
 
 
 
 input.search-query {
-    padding-left:26px;
+    padding-left:10px;
 }
 
 form.form-search {
     position: relative;
+}
+
+form.form-search-welcome:before {
+    display: none;
+    width: 14px;
+    height: 14px;
+    content: "\e003";
+    font-family: 'Glyphicons Halflings';
+    background-position: -100px 0;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    opacity: .5;
+    z-index: 1000;
 }
 
 form.form-search:before {
@@ -57,10 +75,9 @@ form.form-search:before {
     height: 14px;
     content: "\e003";
     font-family: 'Glyphicons Halflings';
-    background-position: -45px 0;
     position: absolute;
     top: 8px;
-    left: 8px;
+    left: 628px;
     opacity: .5;
     z-index: 1000;
 }
