@@ -13,11 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
- .starter-template {
-    top: 10000%;
-    left: 15%;
-    right: 15%;
-    text-align: center;
-    position: absolute;
-}
