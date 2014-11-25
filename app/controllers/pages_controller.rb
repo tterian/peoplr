@@ -6,14 +6,13 @@ class PagesController < ApplicationController
     @query = params[:q]
 
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = "TPiF7v0F3cAEC9KpSgrmMEyp7"
-      config.consumer_secret     = "VTh9vs3b8QcBbSn0BgddbMKGraUpD4Ky50IM896woDrqi66bNH"
-      config.access_token        = "2457919124-gInYE2ljgGB5tYyisA1rwkxRO612Q17wiDFVPcb"
-      config.access_token_secret = "twm9pmbseJkY4ZYvdNlEWWSqi48zk7kqwnyF4cKfyVIgk"
+      config.consumer_key        = "q8q9SyMjx5t0YhGCPbnKPFI6K"
+      config.consumer_secret     = "0OnRgiJFaOVbYTxoF3RNCe5coMxYMTAyWW9btAlJfyKexC9Egz"
+      config.access_token        = "2909787830-toEPbGdfL10pdm1FMKdCyeBFuDZ6AWIp7W0Zchl"
+      config.access_token_secret = "sRkRHDvVd5WhT6lH8cNadCHJN3Pb7AanJ1rEqgbsP0mAi"
     end
   	 
-    @result = client.user_search("#{@query}", count: 5)
-#    @profile = client.profile("#{@query}")
+    @result = client.user_search("#{@query}", count: 10)
   end
 
   def about
