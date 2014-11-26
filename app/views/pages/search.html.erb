@@ -37,10 +37,11 @@
 			<div class="search-content">
 				<div class="item-header">
 					<%= link_to "https://twitter.com/#{user.screen_name}", :target => "_blank" do %>
-						<%= image_tag(user.profile_image_url)  %>
+						<%= image_tag(user.profile_image_url.to_s.sub("_normal", ""), :size => "160x160")  %>
 					<% end %>
 					<strong><%= link_to("#{user.name}", "https://twitter.com/#{user.screen_name}", :target => "_blank") %></strong>
 					<em><%= "@#{user.screen_name}" %></em>
+					<em><%= "#{user.followers_count} followers" %></em>
 				</div>
 
 				<div>
@@ -50,7 +51,7 @@
 			</div>
 		<% end %>
 	<% else %>
-		<div class="page-header">
+		<div class="search-content">
 			<p>Oops, seems there is noone matching "<%= @query %>"! </p>
 		</div>
 	<% end %>
