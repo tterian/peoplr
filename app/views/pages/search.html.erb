@@ -31,10 +31,10 @@
 </nav>
 
 
-<div class="search-results center-block">
+<div class="search-wrap center-block">
 	<% if @result.size != 0 %>
 		<% @result.each do |user| %>
-			<div class="search-content page-header">
+			<div class="search-content">
 				<div class="item-header">
 					<%= link_to "https://twitter.com/#{user.screen_name}", :target => "_blank" do %>
 						<%= image_tag(user.profile_image_url)  %>
