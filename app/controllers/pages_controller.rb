@@ -13,6 +13,19 @@ class PagesController < ApplicationController
     end
   	 
     @result = client.user_search("#{@query}", count: 10)
+
+#    @result.each do |user|
+#      @id = user.id
+#      @pic = user.profile_image_url
+#      @name = user.name
+#      @screen_name = user.screen_name
+#      @location = user.location
+#      @followers = user.followers_count
+#      @description = user.description
+#      @verified = user.verified
+#    end
+
+
   end
 
   def about

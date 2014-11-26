@@ -19,18 +19,20 @@
     </div>
 </nav>
 
-<div class="welcome-tab">        
-	<div class="container">
-    	<h1>Searching for people made easy.</h1>
-    	<p1>Search engine explicitly developped for finding people.</p1>
-    </div>
-</div>
+<div class="home-page">
+	<div class="welcome-tab">        
+		<div class="container">
+    		<h1>Searching for people made easy.</h1>
+    		<p1>Search engine explicitly developped for finding people.</p1>
+    	</div>
+	</div>
 
-<div class="search-tab">
-    <div class="form-inline">
-			<%= form_tag("/search", :method => 'get', :enforce_utf8 => false, :class => "navbar-search form-search-welcome") do %>
-			<%= text_field_tag(:q, params[:q], :class => "form-control search-query") %>
-			<%= submit_tag("Search", :name => nil, :class => "btn btn-default") %>
-		<% end %>
+	<div class="search-tab">
+    	<div class="form-inline">
+				<%= form_tag("/search", :method => 'get', :enforce_utf8 => false, :class => "navbar-search form-search-welcome") do %>
+				<%= text_field_tag(:q, params[:q], :class => "form-control search-query") %>
+				<%= submit_tag("Search", :name => nil, :class => "btn btn-default") %>
+			<% end %>
+		</div>
 	</div>
 </div>

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.home-page {
+	background: #ecf0f1;
+}
+
 .welcome-tab {
 	position: relative;
 	text-align: center;
@@ -21,7 +25,6 @@
 }
 
 .welcome-tab p1 {
-	color: #000000;
 	font-family: 'Dosis', sans-serif;
 	font-size: 31px;
 }
@@ -40,7 +43,6 @@
 
 .search-results {
 	position: relative;
-	left: 98px;
 	top: 68px;	
 }
 
@@ -50,6 +52,11 @@
 input.search-query {
     padding-left:10px;
 }
+
+input.search-query-nav {
+    padding-left:36px;
+}
+
 
 form.form-search {
     position: relative;
@@ -77,7 +84,7 @@ form.form-search:before {
     font-family: 'Glyphicons Halflings';
     position: absolute;
     top: 8px;
-    left: 628px;
+    left: 12px;
     opacity: .5;
     z-index: 1000;
 }
