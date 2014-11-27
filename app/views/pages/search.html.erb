@@ -35,23 +35,35 @@
 	<% if @result.size != 0 %>
 		<% @result.each do |user| %>
 			<div class="search-content">
-				<div class="item-header">
+				<div class="item-image">
 					<%= link_to "https://twitter.com/#{user.screen_name}", :target => "_blank" do %>
-						<%= image_tag(user.profile_image_url.to_s.sub("_normal", ""), :size => "160x160")  %>
+						<%= image_tag(user.profile_image_url.to_s.sub("_normal", ""), :size => "160x160", :class => "img-rounded")  %>
 					<% end %>
-					<strong><%= link_to("#{user.name}", "https://twitter.com/#{user.screen_name}", :target => "_blank") %></strong>
-					<em><%= "@#{user.screen_name}" %></em>
-					<em><%= "#{user.followers_count} followers" %></em>
 				</div>
 
-				<div>
-					<p><%= user.description %></p>
+				<div class="item-description">
+					<div class="item-header">
+						<%= link_to "https://twitter.com/#{user.screen_name}", :target => "_blank" do %>
+							<strong><%= "#{user.name}" %></strong>
+						<% end %>
+						<em><%= "   @#{user.screen_name}" %></em>
+					</div>
+					<div class="item-footer">
+						<p><%= "Followers: #{user.followers_count}" %></p>
+						<p><%= Date.parse(user.created_at.to_s) %></p>
+						<% if user.location.present? %>
+							<p><%= "GEO: #{user.location}" %></p>
+						<% else %>
+							<p><%= "GEO: N/A" %></p>
+						<% end %>
+						<p><%= "Bio: #{user.description}" %></p>
+					</div>
 				</div>
 
 			</div>
 		<% end %>
 	<% else %>
-		<div class="search-content">
+		<div class="welcome-tab">
 			<p>Oops, seems there is noone matching "<%= @query %>"! </p>
 		</div>
 	<% end %>

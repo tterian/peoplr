@@ -58,14 +58,36 @@ html {
 
 .search-content {
     position: relative;
-    padding: 0 100px 0;
+    max-width: 1500px;
+    height: 180px;
+    margin: 0 100px 0;
     font-family: 'Dosis', sans-serif;
     font-size: 18px;
     top: 68px;
 }
 
+.item-image {
+    position: absolute;
+    margin: 2px 2px 0;
+    display: inline-block;
+}
+
+.item-description {
+    margin: 2px 200px 0;
+    display: inline-block;
+}
+
+.item-footer {
+    margin: 2px 16px 0;
+    color: #7f8c8d;
+}
+
+.item-footer p {
+    line-height: 1;
+}
 
 
+/* FOR HIGHLIGHTING THINGS border: 3px solid red; */
 
 input.search-query {
     padding-left:10px;
