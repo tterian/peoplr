@@ -14,6 +14,8 @@ class PagesController < ApplicationController
   	 
     @result = client.user_search("#{@query}", count: 10)
 
+    first_user = @result[0].name
+
 #    @result.each do |user|
 #      @id = user.id
 #      @pic = user.profile_image_url
@@ -25,6 +27,16 @@ class PagesController < ApplicationController
 #      @verified = user.verified
 #    end
 
+    page = Wikipedia.find("#{first_user}")
+    content = page.raw_data
+    content.fetch("query")
+
+    fetch("pages") fetch("2275990") .flatten
+
+
+    start_point = spit.index("#{content}")
+
+#    while 
 
   end
 

@@ -5,3 +5,5 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 require 'rubygems'
 require 'twitter'
+require 'wikipedia'
+require 'json'
