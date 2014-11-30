@@ -11,10 +11,32 @@ class PagesController < ApplicationController
       config.access_token        = "2909787830-toEPbGdfL10pdm1FMKdCyeBFuDZ6AWIp7W0Zchl"
       config.access_token_secret = "sRkRHDvVd5WhT6lH8cNadCHJN3Pb7AanJ1rEqgbsP0mAi"
     end
-  	 
-    @result = client.user_search("#{@query}", count: 10)
 
+    @result = client.user_search("#{@query}", count: 10)
     first_user = @result[0].name
+
+
+
+
+    #Wikipedia
+
+#    user = first_user.sub(" ", "%20")
+#    request_options = "&prop=revisions&rvprop=content&format=json&"
+#    address = "http://en.wikipedia.org/w/api.php?action=query#{request_options}titles=#{user}&rvsection=0"
+
+#    url = URI(address)    
+#    http = Net::HTTP.new url.host, url.port
+#    request = Net::HTTP::Get.new url.request_uri
+
+#    http.start
+#    response = http.request(request)
+
+#    infobox = response.body.split("Infobox character")[1]
+#    infobox_header = infobox.split("\\n\\n")[0]
+#    infobox_bio = infobox.split("\\n\\n")[1]
+
+
+#    first_user = @result[0].name
 
 #    @result.each do |user|
 #      @id = user.id
@@ -27,14 +49,14 @@ class PagesController < ApplicationController
 #      @verified = user.verified
 #    end
 
-    page = Wikipedia.find("#{first_user}")
-    content = page.raw_data
-    content.fetch("query")
+#    page = Wikipedia.find("#{first_user}")
+#    content = page.raw_data
+#    content.fetch("query")
 
-    fetch("pages") fetch("2275990") .flatten
+#    fetch("pages") fetch("2275990") .flatten
 
 
-    start_point = spit.index("#{content}")
+#    start_point = spit.index("#{content}")
 
 #    while 
 

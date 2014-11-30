@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 html {
     background: #f7f7f7;
 }
@@ -21,7 +22,7 @@ html {
 }
 
 .welcome-tab h1 {
-	color: #000000;
+	color: #C0392B;
 	font-family: 'Dosis', sans-serif;
 	font-size: 50px;
 	text-align: center;
@@ -34,6 +35,10 @@ html {
 	font-size: 31px;
 }
 
+.btn-search {
+    color: #2ECC71;
+}
+
 .search-tab {
 	position: relative;
 	top: 200px;
@@ -42,12 +47,45 @@ html {
 	font-family: 'Dosis', sans-serif;
 }
 
+.sub-nav-tab {
+    position: relative;
+    left: 106px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.sub-nav-tab a {
+    color: #ffffff;
+}
+
+
 .navbar {
-    background: #2ecc71;
-	font-family: 'Dosis', sans-serif;
+    min-height: 53px;
+    margin-bottom: 30px;
+    max-height: 340px;
+    background: #E74C3C;
+}
+
+.navbar-header a {
+    font-family: 'Dosis', sans-serif;
+    text-decoration: none;
+    font-size: 26px;
+    color: #ffffff;
+}
+
+.navbar-footer {
+    font-family: 'Dosis', sans-serif;
+    display: inline-block;
+    position: relative;
+    right: 40px;
+}
+
+.navbar-footer a {
+    font-size: 20px;
+    color: #ffffff;
 }
 
 .search-wrap {
+    top: 40px;
     margin: 0;
     padding: 0;
     border: 0;
@@ -95,6 +133,7 @@ input.search-query {
 
 input.search-query-nav {
     padding-left:36px;
+
 }
 
 
@@ -103,15 +142,16 @@ form.form-search {
 }
 
 form.form-search-welcome:before {
+
     display: none;
-    width: 14px;
-    height: 14px;
+    width: 50px;
+    height: 100px;
     content: "\e003";
     font-family: 'Glyphicons Halflings';
     background-position: -100px 0;
     position: absolute;
-    top: 8px;
-    left: 8px;
+    top: 80px;
+    left: 80px;
     opacity: .5;
     z-index: 1000;
 }

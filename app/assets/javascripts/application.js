@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var main = function() {
+	$('#togglable-tab a').click(function (e) {
+	  e.preventDefault()
+	  $(this).tab('show')
+	})
+};
+
+$(document).ready(main);
