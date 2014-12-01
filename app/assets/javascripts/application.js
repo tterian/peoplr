@@ -15,11 +15,14 @@
 //= require turbolinks
 //= require_tree .
 
-var main = function() {
-	$('#togglable-tab a').click(function (e) {
-	  e.preventDefault()
-	  $(this).tab('show')
+$(document).ready(function() {
+	$('#instantCarousel').carousel({
+	interval: 10000
 	})
-};
-
-$(document).ready(main);
+    
+    $('#myCarousel').on('slid.bs.carousel', function() {
+    	//alert("slid");
+	});
+    
+    
+});

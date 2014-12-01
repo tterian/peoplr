@@ -13,7 +13,30 @@ class PagesController < ApplicationController
     end
 
     @result = client.user_search("#{@query}", count: 10)
-    first_user = @result[0].name
+#    first_user_id = @result[0].id
+#    first_user = @result[0].name
+
+#Get photos
+
+    tweets = client.search("#{@query}", count: 10, result_type: "mixed", include_entities: true, filter: "images")
+
+    @statuses = tweets.attrs[:statuses]
+
+#    @statuses.each do |status|
+#      if !status[:entities][:media] do
+#        type = status[:entities][:media][0][:type]
+#type should be equal to "photo"
+#        source = status[:source]
+#        text = status[:text]
+#        image_url = status[:entities][:media][0][:media_url]
+
+#        puts "TEXT #{text}"
+#        puts "SOURCE #{image_url}"
+#      end
+#    end
+
+
+
 
 
 

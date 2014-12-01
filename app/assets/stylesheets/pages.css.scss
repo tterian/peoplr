@@ -61,7 +61,6 @@ html {
 .navbar {
     min-height: 53px;
     margin-bottom: 30px;
-    max-height: 340px;
     background: #E74C3C;
 }
 
@@ -84,8 +83,48 @@ html {
     color: #ffffff;
 }
 
+.instant-tab {
+    display: block;
+}
+
+.instant-tab {
+    display: block;
+}
+
+.tab-menu li {
+    position: relative;
+    left: 70px;
+    display: inline-block;    
+}
+
+.tab-menu a {
+    color: #ffffff;
+    font-family: 'Dosis', sans-serif;
+}
+
+.instant-tab-content-wrap {
+    position: absolute;
+    left: -18px;
+    width: 110%;
+    top: 1px;
+    height: 200px;
+    background: #ffffff;
+}
+
+.instant-tab-content {
+    position: relative;
+    left: 124px;
+    top: 20px;
+}
+
+
+
+
+
+    
+
 .search-wrap {
-    top: 40px;
+    top: 260px;
     margin: 0;
     padding: 0;
     border: 0;
@@ -97,6 +136,7 @@ html {
 .search-content {
     position: relative;
     max-width: 1500px;
+    left: 20px;
     height: 180px;
     margin: 0 100px 0;
     font-family: 'Dosis', sans-serif;
@@ -123,6 +163,8 @@ html {
 .item-footer p {
     line-height: 1;
 }
+
+
 
 
 /* FOR HIGHLIGHTING THINGS border: 3px solid red; */

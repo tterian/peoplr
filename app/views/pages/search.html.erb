@@ -29,22 +29,31 @@
         </div>
 
 
-		<div class="bs-example bs-example-tabs" role="tabpanel">
-		    <ul id="togglable-tab" class="nav nav-tabs sub-nav-tab" role="tablist">
-		      <li role="presentation" data-toggle="tab">
-		      		<a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Photos</a></li>
-		      <li role="presentation" data-toggle="tab">
-		      		<a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">About</a></li>
+		<div class="instant-tab">
+		    <ul class="tab-menu">
+		    	<li class="button-menu-item">
+		      		<a href="">photos</a></li>
+		    	<li class="button-menu-item">
+		      		<a href="">about</a></li>
 		    </ul>
 
-		    <div class="tab-content">
-		      <div role="tabpanel" class="tab-pane fade" id="home" aria-labelledBy="home-tab">
-		        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-		      </div>
-		      <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledBy="profile-tab">
-		        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-		      </div>
-		    </div>
+		    <div id="instantCarousel" class="instant-tab-content-wrap carousel slide">
+			    <div class="instant-tab-content carousel-inner">
+					<% if @statuses.size != 0 %>
+						<% @statuses.each do |status| %>
+							<% if status[:entities].size == 4 %>
+							<% else %>
+								<%= image_tag(status[:entities][:media][0][:media_url], :height => "160px")  %>
+							<% end %>
+						<% end %>
+					<% else %>
+						<p>No image was found for "<%= @query %>"! </p>
+					<% end %>
+			    </div>
+			    <a class="left carousel-control" href="#instantCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#instantCarousel" data-slide="next">›</a>
+
+			</div>
 
 		</div>
 
