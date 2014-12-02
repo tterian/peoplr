@@ -37,22 +37,20 @@
 		      		<a href="">about</a></li>
 		    </ul>
 
-		    <div id="instantCarousel" class="instant-tab-content-wrap carousel slide">
+		    <div class="instant-tab-content-wrap carousel slide">
 			    <div class="instant-tab-content carousel-inner">
+			    	<ul>
 					<% if @statuses.size != 0 %>
-						<% @statuses.each do |status| %>
-							<% if status[:entities].size == 4 %>
-							<% else %>
-								<%= image_tag(status[:entities][:media][0][:media_url], :height => "160px")  %>
-							<% end %>
+						<% @images.each do |image| %>
+						<li>
+							<%= image_tag(image, :height => "160px")  %>
+						</li>
 						<% end %>
 					<% else %>
 						<p>No image was found for "<%= @query %>"! </p>
 					<% end %>
+				</ul>
 			    </div>
-			    <a class="left carousel-control" href="#instantCarousel" data-slide="prev">‹</a>
-                <a class="right carousel-control" href="#instantCarousel" data-slide="next">›</a>
-
 			</div>
 
 		</div>

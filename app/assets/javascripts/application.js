@@ -14,15 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-$(document).ready(function() {
-	$('#instantCarousel').carousel({
-	interval: 10000
-	})
-    
-    $('#myCarousel').on('slid.bs.carousel', function() {
-    	//alert("slid");
-	});
-    
-    
-});

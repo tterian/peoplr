@@ -14,31 +14,30 @@ class PagesController < ApplicationController
 
     @result = client.user_search("#{@query}", count: 10)
 #    first_user_id = @result[0].id
-#    first_user = @result[0].name
+    first_user = @result[0].screen_name
 
 #Get photos
+    extended_query = ["#{@query}", "#{@query.delete(" ")}", "#{first_user}"]
+    image_urls = Array.new
 
-    tweets = client.search("#{@query}", count: 10, result_type: "mixed", include_entities: true, filter: "images")
+    extended_query.each do |q|
+      tweets = client.search("#{q}", count: 30, result_type: "mixed", include_entities: true, filter: "images")
 
-    @statuses = tweets.attrs[:statuses]
+      @statuses = tweets.attrs[:statuses]
 
-#    @statuses.each do |status|
-#      if !status[:entities][:media] do
-#        type = status[:entities][:media][0][:type]
-#type should be equal to "photo"
-#        source = status[:source]
-#        text = status[:text]
-#        image_url = status[:entities][:media][0][:media_url]
+      @statuses.each do |status|
+        if status[:entities].size == 5
+            image_url = status[:entities][:media][0][:media_url]
+            type = status[:entities][:media][0][:type]
+            source = status[:source]
+            text = status[:text]
+        end
+        image_urls += ["#{image_url}"]
+      end
 
-#        puts "TEXT #{text}"
-#        puts "SOURCE #{image_url}"
-#      end
-#    end
+    end
 
-
-
-
-
+    @images = image_urls.uniq
 
 
     #Wikipedia

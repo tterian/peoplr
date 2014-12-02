@@ -87,14 +87,10 @@ html {
     display: block;
 }
 
-.instant-tab {
-    display: block;
-}
-
 .tab-menu li {
     position: relative;
     left: 70px;
-    display: inline-block;    
+    display: inline-block;
 }
 
 .tab-menu a {
@@ -103,6 +99,8 @@ html {
 }
 
 .instant-tab-content-wrap {
+    overflow: auto;
+    white-space: nowrap;
     position: absolute;
     left: -18px;
     width: 110%;
@@ -113,11 +111,13 @@ html {
 
 .instant-tab-content {
     position: relative;
-    left: 124px;
+    left: 84px;
     top: 20px;
 }
 
-
+.instant-tab-content li {
+    display: inline-block;
+}
 
 
 
@@ -168,6 +168,10 @@ html {
 
 
 /* FOR HIGHLIGHTING THINGS border: 3px solid red; */
+
+
+
+
 
 input.search-query {
     padding-left:10px;
