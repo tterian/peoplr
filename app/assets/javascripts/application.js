@@ -12,5 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require slick
 //= require_tree .
+
+
+$(document).ready(function(){
+	$('.slick-carousel').slick({
+		infinite: true,
+		centerMode: true,
+		adaptiveHeight: true,
+		variableWidth: true
+	});
+});

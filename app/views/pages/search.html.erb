@@ -1,100 +1,65 @@
-<nav class="navbar navbar-fixed-top" role="navigation">
-	<div class="container-fluid">
-	    <div class="navbar-header">
-	         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	        	<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="/">Peoplr</a>
-	    </div>
-
-	    <div class="navbar-footer navbar-right">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-	            <span class="sr-only">Toggle navigation</span>
-			</button>
-			<a class="navbar-brand pull-right" href="/about">about</a></li>
-			<a class="navbar-brand pull-right" href="/spread">spread a word</a></li>
-		</div>
-
-	    <div class="row">
-	      	<div class="col-md-6">
-	       		<div style="padding:10px;">
-					<%= form_tag("/search", :method => 'get', :enforce_utf8 => false, :class => "navbar-search form-search") do %>
-    				<%= text_field_tag(:q, params[:q], :class => "form-control search-query-nav") %>
-					<% end %>
-				</div>	
-        	</div>
-        </div>
-
-
-		<div class="instant-tab">
-		    <ul class="tab-menu">
-		    	<li class="button-menu-item">
-		      		<a href="">photos</a></li>
-		    	<li class="button-menu-item">
-		      		<a href="">about</a></li>
-		    </ul>
-
-		    <div class="instant-tab-content-wrap carousel slide">
-			    <div class="instant-tab-content carousel-inner">
-			    	<ul>
-					<% if @statuses.size != 0 %>
-						<% @images.each do |image| %>
-						<li>
-							<%= image_tag(image, :height => "160px")  %>
-						</li>
-						<% end %>
-					<% else %>
-						<p>No image was found for "<%= @query %>"! </p>
-					<% end %>
-				</ul>
-			    </div>
-			</div>
-
-		</div>
-
-    </div>
-</nav>
-
-
-<div class="search-wrap center-block">
+<div class="large-6 columns search-content">
 	<% if @result.size != 0 %>
 		<% @result.each do |user| %>
-			<div class="search-content">
+			<div class="panel radius search-item">
+
 				<div class="item-image">
-					<%= link_to "https://twitter.com/#{user.screen_name}", :target => "_blank" do %>
-						<%= image_tag(user.profile_image_url.to_s.sub("_normal", ""), :size => "160x160", :class => "img-rounded")  %>
+					<%= link_to "https://twitter.com/#{user.screen_name}", target: "_blank", class: "th [radius]" do %>
+						<%= image_tag(user.profile_image_url.to_s.sub("_normal", ""), size: "160x160")  %>
 					<% end %>
 				</div>
 
 				<div class="item-description">
 					<div class="item-header">
-						<%= link_to "https://twitter.com/#{user.screen_name}", :target => "_blank" do %>
+						<%= link_to "https://twitter.com/#{user.screen_name}", target: "_blank" do %>
 							<strong><%= "#{user.name}" %></strong>
 						<% end %>
 						<em><%= "   @#{user.screen_name}" %></em>
 					</div>
 					<div class="item-footer">
-						<p><%= "Followers: #{user.followers_count}" %></p>
-						<p><%= Date.parse(user.created_at.to_s) %></p>
+						<div class="item-desc">
+							<%= evil_icon 'ei-eye', size: :m %>
+							<span><%= "#{user.followers_count} followers" %></span>
+						</div>
+
+						<div class="item-desc">
+							<%= evil_icon 'ei-calendar', size: :m %>
+							<span>Account created <%= time_ago_in_words(user.created_at) %> ago</span>
+						</div>
+						
 						<% if user.location.present? %>
-							<p><%= "GEO: #{user.location}" %></p>
+							<div class="item-desc">
+								<%= evil_icon 'ei-location', size: :m %>
+								<span><%= "#{user.location}" %></span>
+							</div>
 						<% else %>
-							<p><%= "GEO: N/A" %></p>
+							<div class="item-desc">
+								<%= evil_icon 'ei-location', size: :m %>
+								<span><%= "Not available!" %></span>
+							</div>
 						<% end %>
-						<p><%= "Bio: #{user.description}" %></p>
+						<p><%= "#{user.description}" %></p>
 					</div>
 				</div>
 
 			</div>
 		<% end %>
+
 	<% else %>
-		<div class="welcome-tab">
-			<p>Oops, seems there is noone matching "<%= @query %>"! </p>
+		<div class="welcome-page">
+			<p>Oops, seems there is no one matching "<%= @query %>"! </p>
 		</div>
 	<% end %>
-
 </div>
 
+<div class="large-4 columns gallery-content">
+	<div class="panel radius">
+		<div class="slick-carousel">
+			<% @images.each do |image| %>
+				<div>
+					<%= image_tag(image, :height => "160")  %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

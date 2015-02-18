@@ -1,0 +1,63 @@
+$white			: #ffffff;
+$mehmeh			: #6a6c6f;
+
+.search-content {
+	font-family: "Arial";
+	padding-top: 20px;
+	.search-item {
+		position: relative;
+		width: 100%;
+		height: 270px;
+		.item-image {
+			position: absolute;
+			display: inline-block;
+		}
+		.item-description {
+			left: 200px;
+			color: $mehmeh;
+			position: absolute;
+			display: inline-block;
+			line-height: 1;
+			.item-footer {
+				.item-desc {
+					position: relative;
+					height: 50px;
+					span {
+						position: absolute;
+						top: 40%;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.gallery-content {
+	padding-top: 20px;
+	.slick-carousel {
+		height: 225px;
+		img {
+			max-width: auto;
+			max-height: 218px;
+			margin: 4px;
+		}
+	}
+}
+
+.panel {
+	background-color: $white;
+}
+
+.icon--ei-eye {
+	fill: $mehmeh;
+}
+
+.icon--ei-calendar {
+	fill: $mehmeh;	
+}
+
+.icon--ei-location {
+	fill: $mehmeh;	
+}
+

@@ -1,0 +1,19 @@
+<nav class="tab-bar">
+
+	<div class="large-2 columns peoplr-icon">
+		<a href="/">
+			<%= evil_icon 'ei-user', size: :m %>
+			<%= image_tag("peoplr.png") %>
+		</a>
+	</div>
+
+	<div class="large-6 columns search-bar">
+		<%= form_tag("/search", method: 'get', enforce_utf8: false) do %>
+			<%= text_field_tag(:q, params[:q], placeholder: "Search for people here...", class: "radius") %>
+		<% end %>
+	</div>
+
+	<div class="large-2 columns">
+	</div>
+
+</nav>
