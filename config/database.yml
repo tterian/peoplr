@@ -25,18 +25,18 @@ development:
   database: db/peoplr_development
   host: localhost
   username: tigranas
-  password: Virl645830
+  password:
 
 test:
   <<: *default
   database: db/peoplr_test
   host: localhost
   username: tigranas
-  password: Virl645830
+  password:
 
 production:
   <<: *default
   database: db/peoplr_production
   host: localhost
   username: tigranas
-  password: Virl645830
+  password:
